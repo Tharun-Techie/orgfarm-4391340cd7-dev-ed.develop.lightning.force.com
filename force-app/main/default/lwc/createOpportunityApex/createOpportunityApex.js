@@ -140,7 +140,7 @@ export default class CreateOpportunityApex extends LightningElement {
     showToast(title, message, variant) {
         console.log('Showing toast:', JSON.stringify({ title, message, variant }));
         this.dispatchEvent(
-            new ShowToastEvent({ title, message, variant },'wefwefwefwef')
+            new ShowToastEvent({ title, message, variant },'Something went Wrong please contact administrator')
         );
     }
 }
