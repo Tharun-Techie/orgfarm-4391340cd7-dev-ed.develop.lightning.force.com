@@ -1,0 +1,77 @@
+<template>
+    <lightning-card title="Car Booking Opportunities">
+
+        <!-- ========================= -->
+        <!-- CREATE OPPORTUNITY FORM  -->
+        <!-- ========================= -->
+        <div class="slds-p-around_medium slds-grid slds-wrap slds-gutters">
+
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input
+                    label="Customer / Booking Name"
+                    value={oppName}
+                    onchange={handleNameChange}
+                    >
+                </lightning-input>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input
+                    type="date"
+                    label="Expected Delivery Date"
+                    value={closeDate}
+                    onchange={handleDateChange}
+                    >
+                </lightning-input>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2">
+                <!-- ✅ PRODUCTION PICKLIST -->
+                <lightning-combobox
+                    label="Booking Stage"
+                    value={stageName}
+                    placeholder="Select Booking Stage"
+                    options={stageOptions}
+                    onchange={handleStageChange}
+                    >
+                </lightning-combobox>
+            </div>
+
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input
+                    type="number"
+                    label="Booking Amount"
+                    value={amount}
+                    onchange={handleAmountChange}>
+                </lightning-input>
+            </div>
+
+            <div class="slds-col slds-size_1-of-1 slds-m-top_medium">
+                <lightning-button
+                    variant="brand"
+                    label="Create Booking Opportunity"
+                    onclick={handleSaveWrapper}>
+                </lightning-button>
+            </div>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- LIST OPPORTUNITIES TABLE -->
+        <!-- ========================= -->
+        <template if:true={opportunities}>
+            <div class="slds-p-around_medium">
+                <h3 class="slds-text-heading_small slds-m-bottom_small">
+                    Latest Car Booking Opportunities
+                </h3>
+
+                <lightning-datatable
+                    key-field="Id"
+                    data={opportunities}
+                    columns={columns}>
+                </lightning-datatable>
+            </div>
+        </template>
+
+    </lightning-card>
+</template>

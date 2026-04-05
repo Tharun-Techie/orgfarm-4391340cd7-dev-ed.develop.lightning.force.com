@@ -1,0 +1,39 @@
+<template>
+    <div class="field">
+        <label for="name">Enter your name:</label>
+        <input id="name" type="text" name="name"  onkeyup={changeHandler}  value={name}/>
+    </div>
+
+    <div class="field">
+        <label for="title">Enter your title:</label>
+        <input id="title" type="text" name="title" onkeyup={changeHandler}  value={title} />
+    </div>
+
+    <!-- <lightning-icon icon-name='action:approval' alternative-text='approval' size='large' title='approval' onclick={handleIconClick}></lightning-icon> -->
+    <!-- Icon Button -->
+    <lightning-button-icon
+        icon-name="action:approval"
+        alternative-text="User Info"
+        title="User Info"
+        onclick={handleIconClick}
+        variant="border-filled">
+    </lightning-button-icon>
+
+
+    <div class="results">
+        <h5>My name is {name} and my title is {title}</h5>
+    </div>
+
+    <div class="slds-grid slds-wrap">
+    <div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12">
+            <template if:true={fact}>
+                <p title={fact}>{fact}</p>
+            </template>
+    </div>
+    </div>
+    
+
+
+
+
+</template>

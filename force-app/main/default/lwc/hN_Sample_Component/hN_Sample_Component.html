@@ -1,0 +1,27 @@
+<template>
+    <!-- Icon Button -->
+    <lightning-button-icon
+        icon-name="action:approval"
+        alternative-text="User Info"
+        title="User Info"
+        onclick={handelOnClick}
+        variant="border-filled">
+    </lightning-button-icon>
+
+    <!-- API Response -->
+    <template if:true={apiRes}>
+        <div class="slds-m-top_medium">
+            <ul>
+                <template for:each={apiRes} for:item="id">
+                    <li title={id} key={id}>{id}</li>
+                </template>
+            </ul>
+        </div>
+    </template>
+
+    <!-- Static Content -->
+    <div class="slds-m-top_medium">
+        <span>1</span>
+        <p>Hello Salesforce</p>
+    </div>
+</template>

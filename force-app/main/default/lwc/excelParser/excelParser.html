@@ -1,0 +1,39 @@
+<template>
+    <lightning-card title="Excel Parser">
+        <div class="slds-p-around_medium">
+
+            <!-- File Upload -->
+            <lightning-input type="file" label="Upload Excel File"
+                             accept=".xlsx,.xls"
+                             onchange={handleFileUpload}>
+            </lightning-input>
+
+            <!-- Display Data -->
+            <template if:true={data.length}>
+                <h3 class="slds-m-top_medium">Parsed Sheet Data</h3>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+
+                    <thead>
+                        <tr>
+                            <template for:each={columns} for:item="col">
+                                <th key={col}>{col}</th>
+                            </template>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <template for:each={data} for:item="row">
+                            <tr key={row.id}>
+                                <template for:each={columns} for:item="col">
+                                    <td key={col}>{row[col]}</td>
+                                </template>
+                            </tr>
+                        </template>
+                    </tbody>
+
+                </table>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

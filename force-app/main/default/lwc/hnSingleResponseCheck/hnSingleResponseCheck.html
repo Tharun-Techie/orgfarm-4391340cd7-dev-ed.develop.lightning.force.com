@@ -1,0 +1,16 @@
+<template>
+    <lightning-input
+        label="Input"
+        value={value}
+        onchange={handleChange}>
+    </lightning-input>
+
+    <lightning-button
+        label="Send"
+        onclick={send}>
+    </lightning-button>
+
+    <template if:true={result}>
+        <p>{result}</p>
+    </template>
+</template>
