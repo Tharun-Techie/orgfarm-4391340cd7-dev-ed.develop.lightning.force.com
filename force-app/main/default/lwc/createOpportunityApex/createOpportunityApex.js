@@ -11,7 +11,7 @@ import { getObjectInfo, getPicklistValues } from 'lightning/uiObjectInfoApi';
 import OPPORTUNITY_OBJECT from '@salesforce/schema/Opportunity';
 import STAGE_FIELD from '@salesforce/schema/Opportunity.StageName';
 
-//code starts hers
+//code starts Here
 export default class CreateOpportunityApex extends LightningElement {
 
     // ========================
