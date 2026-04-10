@@ -11,7 +11,6 @@ import { getObjectInfo, getPicklistValues } from 'lightning/uiObjectInfoApi';
 import OPPORTUNITY_OBJECT from '@salesforce/schema/Opportunity';
 import STAGE_FIELD from '@salesforce/schema/Opportunity.StageName';
 
-//code starts Here
 export default class CreateOpportunityApex extends LightningElement {
 
     // ========================
@@ -141,7 +140,7 @@ export default class CreateOpportunityApex extends LightningElement {
     showToast(title, message, variant) {
         console.log('Showing toast:', JSON.stringify({ title, message, variant }));
         this.dispatchEvent(
-            new ShowToastEvent({ title, message, variant },'Something went Wrong please contact administrator')
+            new ShowToastEvent({ title, message, variant },'wefwefwefwef')
         );
     }
 }
