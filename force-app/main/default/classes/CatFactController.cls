@@ -12,10 +12,10 @@ public with sharing class CatFactController {
 
         //setting set request
         req.setMethod('GET');
-
+        //demo
         //getting response
         HttpResponse res = http.send(req);
-        
+
         // checking 200 response = true
         if (res.getStatusCode() == 200) {
             return res.getBody();
